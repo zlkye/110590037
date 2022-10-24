@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .container {
+    position: relative;
+    width: 1000px; height: 1000px; overflow: hidden; border-radius: 50%; margin:auto;
+  }
+  .image {
+    opacity: 1;
+    display: block;
+    transition: 0.3s ease;
+    backface-visibility: hidden;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .container:hover .image {
+    opacity: 1;
+  }
+  .container:hover .middle {
+    opacity: 1;
+  }
+  .text {
+    background-color:rgba(235, 235, 235, 0.3);
+    width:1000px;
+    color: rgb(177, 175, 255);
+    font-size: 24px;
+    padding: 16px 32px;
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="me.jpg" alt="Avatar" class="image" usemap="#workmap">
+    <div class="middle">
+      <div class="text"><b>Likye-Cheng</b></div>
+    </div>
+    <map name="workmap">
+      <area shape="circle" coords="400,262,80" alt="face" href="https://www.youtube.com/">
+    </map>
+  </div>
+</body>
+</html>
