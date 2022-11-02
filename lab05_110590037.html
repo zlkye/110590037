@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, td{
+        border: 1px solid black;
+      }
+      table, tr{
+        height: 40px;
+      }
+      .text-center{
+          text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <table id="myTable" style="text-align:center" align="center">
+      <tr bgcolor=#80FFFF>
+        <td id='str1' width="60px">Math</td>
+        <td id='str2' width="90px">English</td>
+        <td id='str3' width="120px">Programing</td>
+      </tr>
+      <tr id='color' bgcolor=#F0E68C>
+        <td>90</td>
+        <td>80</td>
+        <td>80</td>
+      </tr>
+      <tr id='color1' bgcolor=#F0E68C>
+        <td>80</td>
+        <td>86</td>
+        <td>98</td>
+      </tr>
+    </table>
+    <br>
+    <div class="text-center">
+    <p align="center">Change The Table Width</p>
+    <button onclick="changeWidth()">200px</button>
+    <button onclick="changeWidth1()">500px</button>
+    <p align="center">Change The Table Border and the Spacing Width</p>
+    <button onclick="changeBorder()">1px</button>
+    <button onclick="changeBorder1()">10px</button>
+    <button onclick="changeBorder2()">20px</button>
+    <p align="center">Change The Table Color</p>
+    <button onclick="changeColor()" style="background-color:green">&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    <button onclick="changeColor2()" style="background-color:blue">&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    <button onclick="changeColor3()" style="background-color:pink">&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    <button onclick="changeColor4()" style="background-color:orange">&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="reset()">Reset</button>
+    </div>
+  </body>
+</html>
