@@ -1,8 +1,12 @@
 function changeWidth() {
-  document.getElementById("myTable").style.height = "200px";
+  document.getElementById("str1").style.width = "200px";
+  document.getElementById("str2").style.width = "200px";
+  document.getElementById("str3").style.width = "200px";
   }
 function changeWidth1() {
-  document.getElementById("myTable").style.height = "500px";
+  document.getElementById("str1").style.width = "500px";
+  document.getElementById("str2").style.width = "500px";
+  document.getElementById("str3").style.width = "500px";
   }
 function changeBorder(){
   document.getElementById("myTable").style.borderSpacing="1px";
@@ -31,7 +35,9 @@ function changeColor4() {
 }
 function reset() {
   document.getElementById("myTable").style.borderSpacing="1px";
-  document.getElementById("myTable").style.height = "40px";
+  document.getElementById("str1").style.width = "60px";
+  document.getElementById("str2").style.width = "90px";
+  document.getElementById("str3").style.width = "120px";
   document.getElementById("color").style.backgroundColor='#F0E68C';
   document.getElementById("color1").style.backgroundColor='#F0E68C';
 }
