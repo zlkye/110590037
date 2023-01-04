@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>cude move</title>
+        <style>
+            canvas{
+                border:1px solid #d3d3d3;
+                background-color: #f1f1f1;
+            }
+            #switch{
+                margin: 15px auto
+            }
+            #switch li{
+                display:inline;
+            }
+        </style>
+    </head>
+    <body onload="startGame()">
+        <script>
+            var redGamePiece, blueGamePiece, yellowGamePiece;
+
+            function startGame() {
+                redGamePiece = new component(75, 75, "red", 10, 10);
+                yellowGamePiece = new component(75, 75, "yellow", 50, 60);
+                blueGamePiece = new component(75, 75, "blue", 10, 220);
+                myGameArea.start();
+            }
+
+            var myGameArea = {
+                canvas : document.createElement("canvas"),
+                start : function() {
+                    redspeed = 2;
+                    redD = 0;
+
+                    bluespeedX = 2;
+                    bluespeedY = 2;
+                    blueD_X = 0;
+                    blueD_Y = 0;
+
+                    yellowspeedX = 2;
+                    yellowspeedY = 2;
+                    yellowD_X = 0;
+                    yellowD_Y = 0;
+                    this.canvas.width = 480;
+                    this.canvas.height = 270;
+                    this.context = this.canvas.getContext("2d");
+                    document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                    this.interval = setInterval(updateGameArea, 20);
+                },
+                clear : function() {
+                    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                }
+            }
+
+            function component(width, height, color, x, y) {
+                this.width = width;
+                this.height = height;
+                this.x = x;
+                this.y = y;
+                this.update = function(){
+                    ctx = myGameArea.context;
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+                this.redreset = function(){
+                    redGamePiece.x = 10;
+                    redGamePiece.y = 10;
+                    redspeed = 2;
+                }
+                this.yellowreset = function(){
+                    yellowGamePiece.x = 50;
+                    yellowGamePiece.y = 60;
+                    yellowspeedX = 1;
+                    yellowspeedY = 1;
+                }
+                this.bluereset = function(){
+                    blueGamePiece.x = 10;
+                    blueGamePiece.y = 220;
+                    bluespeedX = 1;
+                    bluespeedY = 1;
+                }
+                this.redmove = function(){
+                    redGamePiece.x += redspeed;
+                    if(redGamePiece.x >= (480-75)){
+                        redspeed = -1;
+                        redD = 1;
+                    }
+                    if(redGamePiece.x <= 0){
+                        redspeed = 1;
+                        redD = 0;
+                    }
+                }
+                this.yellowmove = function(){
+                    yellowGamePiece.x += yellowspeedX;
+                    if(yellowGamePiece.x >= (480-75)){
+                        yellowspeedX = -1;
+                        yellowD_X = 1;
+                    }
+                    if(yellowGamePiece.x <= 0){
+                        yellowspeedX = 1;
+                        yellowD_X = 0;
+                    }
+                    yellowGamePiece.y += yellowspeedY;
+                    if(yellowGamePiece.y >= (270-75)){
+                        yellowspeedY = -1;
+                        yellowD_Y = 1;
+                    }
+                    if(yellowGamePiece.y <= 0){
+                        yellowspeedY = 1;
+                        yellowD_Y = 0;
+                    }
+                }
+                this.bluemove = function(){
+                    blueGamePiece.x += bluespeedX;
+                    if(blueGamePiece.x >= (480-75)){
+                        bluespeedX = -1;
+                        blueD_X = 1;
+                    }
+                    if(blueGamePiece.x <= 0){
+                        bluespeedX = 1;
+                        blueD_X = 0;
+                    }
+                    blueGamePiece.y += bluespeedY;
+                    if(blueGamePiece.y >= (270-75)){
+                        bluespeedY = -1;
+                        blueD_Y = 1;
+                    }
+                    if(blueGamePiece.y <= 0){
+                        bluespeedY = 1;
+                        blueD_Y = 0;
+                    }
+                }
+            }
+
+            function updateGameArea(){
+                myGameArea.clear();
+                redGamePiece.redmove();
+                yellowGamePiece.yellowmove();
+                blueGamePiece.bluemove();
+
+                redGamePiece.update();
+                yellowGamePiece.update();
+                blueGamePiece.update();
+            }
+
+            function reset(){
+                redGamePiece.redreset();
+                yellowGamePiece.yellowreset();
+                blueGamePiece.bluereset();
+            }
+            function stop(){
+                redspeed = 0;
+
+                bluespeedX = 0;
+                bluespeedY = 0;
+
+                yellowspeedX = 0;
+                yellowspeedY = 0;
+            }
+
+            function start(){
+                if(redD==1)
+                    redspeed = -1;
+                else
+                    redspeed = 1;
+                if(blueD_X==1)
+                    bluespeedX = -1;
+                else
+                    bluespeedX = 1;
+                if(blueD_Y==1)
+                    bluespeedY = -1;
+                else
+                    bluespeedY = 1;
+
+                if(yellowD_X==1)
+                    yellowspeedX = -1;
+                else
+                    yellowspeedX = 1;
+                if(yellowD_Y==1)
+                    yellowspeedY = -1;
+                else
+                    yellowspeedY = 1;
+            }
+
+        </script>
+        <br/>
+        <center>
+        <ul id = "switch">
+            <li><input type="button" onclick = "start()" value = "START"></li>
+            <li><input type="button" onclick = "stop()" value = "STOP"></li>
+            <li><input type="button" onclick = "reset()" value = "RESET"></li>
+        </ul>
+    </body>
+</html>
