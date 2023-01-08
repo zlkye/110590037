@@ -35,6 +35,8 @@ var myTopPostsMenuButton = document.getElementById('menu-my-top-posts');
 var myProfileMenuButton = document.getElementById('menu-my-profile');
 var listeningFirebaseRefs = [];
 
+
+
 /**
  * Saves a new post to the Firebase DB.
  */
@@ -72,6 +74,7 @@ function toggleStar(postRef, uid, postId) {
         firebase.database().ref('/post-comments/' + postId).remove();
       }
       else {
+        document.getElementById('uuid').innerText = uid;
         if (post.stars && post.stars[uid]) {
           post.starCount--;
           post.stars[uid] = null;
@@ -174,6 +177,14 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
   postElement.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
   postElement.getElementsByClassName('avatar')[0].style.backgroundImage = 'url("' +
       (authorPic || './silhouette.jpg') + '")';
+  postElement.getElementsByClassName('mdl-card__title')[0].style.background = 'url("' +
+      (authorPic || './silhouette.jpg') + '")';
+
+
+
+
+
+
 
   // Listen for comments.
   var commentsRef = firebase.database().ref('post-comments/' + postId);
@@ -261,12 +272,15 @@ function updateStarCount(postElement, nbStart) {
 /**
  * Creates a comment element and adds it to the given postElement.
  */
-function addCommentElement(postElement, id, text, author) {
+function addCommentElement(postElement, id, text, author,email,uid) {
   var comment = document.createElement('div');
   comment.classList.add('comment-' + id);
   comment.innerHTML = '<span class="username"></span><span class="comment"></span>';
   comment.getElementsByClassName('comment')[0].innerText = text;
   comment.getElementsByClassName('username')[0].innerText = author || 'Anonymous';
+
+
+
 
   var commentsContainer = postElement.getElementsByClassName('comments-container')[0];
   commentsContainer.appendChild(comment);
@@ -336,6 +350,10 @@ function startDatabaseQueries() {
  * Writes the user's data to the database.
  */
 function writeUserData(userId, name, email, imageUrl) {
+  document.getElementsByClassName('mdl-card__title_temp')[0].style.background = 'url("' +imageUrl + '")center / cover';
+  document.getElementById('name').innerText = name;
+  document.getElementById('mail').innerText = email;
+  document.getElementById('uuid').innerText = userId;
   firebase.database().ref('users/' + userId).set({
     username: name,
     email: email,
@@ -434,6 +452,8 @@ window.addEventListener('load', function() {
 
   // Bind Sign out button.
   signOutButton.addEventListener('click', function() {
+    document.getElementById('name').innerText = '';
+    document.getElementById('mail').innerText = '';
     firebase.auth().signOut();
   });
 
@@ -466,6 +486,7 @@ window.addEventListener('load', function() {
   };
   myProfileMenuButton.onclick = function() {
     showSection(myProfileSection, myProfileMenuButton);
+
   };
   addButton.onclick = function() {
     showSection(addPost);
