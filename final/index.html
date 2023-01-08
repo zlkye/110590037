@@ -58,11 +58,14 @@
 
   <!-- Header section containing logo and menu -->
   <header class="header mdl-layout__header mdl-color-text--white mdl-color--orange-400">
-
-    <div class="mdl-layout__header-row titlebar">
-      <h3 class="logo">WebProgramingFinalProject</h3>
-      <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign out</button>
+    <div style="width:600px;height:60px;"><h3 class="logo">WebProgramingFinalProject</h3></div>
+    <div style="width:600px;height:60px;margin:0px auto 0px auto;">
+      <div class="search">
+        <input class="search-bar" type="text" name="search" id="search" placeholder="輸入名稱">
+        <button class="search-btn"><i class="material-icons">search</i></button>
+      </div>
     </div>
+    <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign out</button>
 
     <!-- Navigation Bar -->
     <div class="tab mdl-layout__header-row mdl-color--orange-300">
@@ -87,7 +90,186 @@
   </header>
 
   <main class="mdl-layout__content mdl-color--grey-100">
-
+    <style>
+      .demo-list-icon {
+        width: 300px;
+      }
+      </style>
+      <div style=" float:left;">
+          <ul class="demo-list-icon mdl-list">
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">group</i>
+              Friends
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">groups</i>
+              Groups
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">storefront</i>
+              Market
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">movie</i>
+              Watch
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">apps</i>
+              View all
+              </span>
+            </li>
+            <hr>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">cake</i>
+              Today is Mom's birthday!
+              </span>
+            </li>
+            <hr>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">sports_esports</i>
+                <a href="110590037.html" style="color:#696969;font-weight:600;">Tetris</a>
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">sports_esports</i>
+                <a href="Snake.html" style="color:#696969;font-weight:600;">Snake</a>
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">sports_esports</i>
+                <a href="Dance.mp4" style="color:#696969;font-weight:600;">Dance</a>
+              </span>
+            </li>
+            <hr>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">dark_mode</i>
+                Dark Mode
+              </span>
+              <span class="mdl-list__item-secondary-action">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                  <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked />
+                </label>
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">settings</i>
+              Setting
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">help</i>
+              Help
+              </span>
+            </li>
+            <li class="mdl-list__item">
+              <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-icon">sms_failed</i>
+              Provide Advices
+              </span>
+            </li>
+          </ul>
+      </div>
+    <style>
+      .demo-list-action {
+        width: 300px;
+      }
+    </style>
+    <div style=" float:right;">
+      <div class="demo-list-action mdl-list">
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Baby❤</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Stephen Curry</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Lebron James</span>
+          </span>
+          <span class="mdl-list__item-secondary-content">
+            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </span>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Lady Gaga</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Donald John Trump</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar mdl-badge mdl-badge--overlap" data-badge="12">person</i>
+            <span>Naruto</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Sasuke</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+              <i class="material-icons mdl-list__item-avatar mdl-badge mdl-badge--overlap" data-badge="3">person</i>
+            <span>Monkey D. Luffy</span>
+          </span>
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Albert Einstein</span>
+          </span>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar mdl-badge mdl-badge--overlap" data-badge="999">person</i>
+            <span>Elon Reeve Musk</span>
+          </span>
+        </div>
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-avatar">person</i>
+            <span>Harry Potter</span>
+          </span>
+        </div>
+      </div>
+    </div>
     <!-- Show the add post form -->
     <section class="mdl-grid content" id="add-post" style="display:none">
       <div class="mdl-cell mdl-cell--12-col mdl-grid">
@@ -135,13 +317,20 @@
       </div>
     </section>
 
-    <section class="mdl-grid content" id="myProfile-list" style="display:none">
+    <div class="demo-card-wide mdl-card mdl-shadow--1dp" id="myProfile-list" style="display:none">
       <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
       </div>
-    </section>
+      <div class="mdl-card__title_temp">
+        <h2 class="yyy">User Name :</h2>
+        <p class="p1" id="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <h2 class="yyy2">Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h2>
+        <p class="p2" id="mail"></p>
+        <h2 class="yyy3">UID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h2>
+        <p class="p3" id="uuid"></p>
+      </div>
+    </div>
   </main>
 </div>
-
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
@@ -149,6 +338,8 @@
 <script src="/__/firebase/9.14.0/firebase-auth-compat.js"></script>
 <script src="/__/firebase/9.14.0/firebase-database-compat.js"></script>
 <script src="/__/firebase/init.js"></script>
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 <script src="scripts/main.js"></script>
 </body>
 </html>
